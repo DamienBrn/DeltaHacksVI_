@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ScreenShotCanvas from '../ScreenShotCanvas/ScreenShotCanvas'
 import './cameraScript'
+import api from '../../../backend/services/api'
 
 export default class CameraLive extends Component {
   render() {
@@ -26,4 +27,11 @@ export default class CameraLive extends Component {
           </div>
     );
   }
+
+  componentDidMount = async()=>{
+    await api.getAllItems().then((res)=>{
+      console.log(res.data)
+    })
+  }
+
 }
