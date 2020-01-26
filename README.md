@@ -1,7 +1,7 @@
 Detla Hacks VI
 
 
-Delta Storage - Inventory Management Powered by AI
+***Delta Storage - Inventory Management Powered by AI***
 
 **Team Members:**
 
@@ -12,7 +12,9 @@ Kevin TABATABAEI
 David FELDT
 
 
-Winter 2020
+------------------------------------
+
+McMaster University - Winter 2020
 
 -------------------------------------
 
