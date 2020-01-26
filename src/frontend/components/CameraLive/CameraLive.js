@@ -3,6 +3,7 @@ import ScreenShotCanvas from '../ScreenShotCanvas/ScreenShotCanvas'
 import './CameraLive.css'
 import './cameraScript'
 import api from '../../../backend/services/api'
+import { test } from './cameraScript';
 
 export default class CameraLive extends Component {
   render() {
@@ -10,7 +11,7 @@ export default class CameraLive extends Component {
       <div className="display-cover">
             <video autoPlay></video>
 
-            <canvas class="d-none"></canvas>
+            <canvas className="d-none"></canvas>
 
 
             <div className="video-options">
@@ -26,5 +27,9 @@ export default class CameraLive extends Component {
             </div>
           </div>
     );
+  }
+
+  componentDidMount(){
+    console.log(test)
   }
 }

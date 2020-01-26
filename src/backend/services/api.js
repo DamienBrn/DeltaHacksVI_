@@ -1,5 +1,4 @@
 import axios from 'axios' 
-import {predict} from '../../hello'
 
 const api = axios.create({
     baseURL: 'http://localhost:4000/api',
@@ -11,18 +10,13 @@ const insertItem = payload => api.post(`/item`, payload)
 const updateItemById = (id, payload) => api.put(`/item/${id}`, payload)
 const deleteItemById = id => api.put(`/item/delete/${id}`)
 
-function predictObjects(image_bytes){
-    predict(image_bytes)
-}
 
 const apis = {
     getAllItems,
     getItemById,
     insertItem,
     updateItemById,
-    deleteItemById,
-
-    predictObjects
+    deleteItemById
 }
 
 export default apis

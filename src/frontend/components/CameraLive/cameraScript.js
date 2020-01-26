@@ -1,7 +1,65 @@
-const api = require("../../../backend/services/api")
+/*
+let projectId = 'whats-that-called'
+let location = 'us-central1'
+let modelId = 'IOD4739137008272670720'
+let filePath = './testimage.jpg'
+
+const { PredictionServiceClient } = require('@google-cloud/automl').v1;
+const fs = require('fs');
+
+// Instantiates a client
+const client = new PredictionServiceClient();
+
+// Read the file content for translation.
+const content = fs.readFileSync(filePath);
+
+
+export async function predict(image_bytes) {
+
+    const request = {
+
+        name: client.modelPath(projectId, location, modelId),
+        payload: {
+            image: {
+                imageBytes: image_bytes,
+            },
+        },
+        params: {
+            score_threshold: '0.9',
+        },
+    };
+
+    var countOfObjects = {
+        "rubberduck": 0,
+        "pen": 0,
+        "brownies": 0,
+        "toiletpaper": 0
+    }
+
+    const [response] = await client.predict(request);
+
+    for (const annotationPayload of response.payload) {
+        countOfObjects[annotationPayload.displayName] = countOfObjects[annotationPayload.displayName] + 1
+    }
+
+    return new Promise((resolve, reject) => {
+        resolve(countOfObjects)
+    })
+}
+
+predict().then((array) => {
+    console.log(array)
+})
+
+
+*/
+
+let test= {
+  name:'test'
+}
+
 
 setTimeout(()=>{
-
 
     const controls = document.querySelector('.controls');
     const cameraOptions = document.querySelector('.video-options>select');
@@ -68,7 +126,8 @@ setTimeout(()=>{
       canvas.getContext('2d').drawImage(video, 0, 0);
       var dataURL = canvas.toDataURL();
       console.log('screenshot taken')
-      api.predictObjects('test')
+
+      //Call prediction script
     };
     
     pause.onclick = pauseStream;
@@ -105,3 +164,7 @@ setTimeout(()=>{
     
     }, 1000)
     
+
+
+    const _test = test;
+export { _test as test };
