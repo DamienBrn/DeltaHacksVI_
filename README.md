@@ -4,8 +4,11 @@ Detla Hacks VI
 Delta Storage - Inventory Management Powered by AI
 
 **Team Members:**
+
 Damien BERNO
+
 Kevin TABATABAEI
+
 David FELDT
 
 
