@@ -3,7 +3,7 @@ import './App.css';
 import Camera from './frontend/components/CameraLive/CameraLive'
 import ItemList from './frontend/components/ItemList/ItemList'
 import Header from './frontend/components/Header/Header'
-import './hello.js'
+// import './hello.js'
 
 function App() {
   return (
