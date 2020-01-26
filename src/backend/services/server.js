@@ -1,4 +1,7 @@
 const express = require('express');
+var http = require('http');
+http.globalAgent.maxSockets = 1000;
+
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');

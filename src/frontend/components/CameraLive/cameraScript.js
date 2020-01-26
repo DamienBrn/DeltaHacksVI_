@@ -73,7 +73,7 @@ setTimeout(() => {
   async function doScreenshot() {
     canvas.width = 500;
     canvas.height = 400;
-    canvas.getContext('2d').drawImage(video, 0, 0, 280, 280);
+    canvas.getContext('2d').drawImage(video, 0, 0, 220, 220);
     var dataURL = canvas.toDataURL();
 
 
@@ -88,11 +88,8 @@ setTimeout(() => {
     api.addPartA({ value: partA })
 
     var partB = compressed.substring(30000, 60000)
-    api.addPartB({ value: partB })
 
-    var partC = compressed.substring(60000, 90000)
-
-    api.predictObjects({ binaryImage: partC }).then(response => {
+    api.predictObjects({ binaryImage: partB }).then(response => {
       itemsCount = response.data.countOfObjects
     })
   };
@@ -102,7 +99,7 @@ setTimeout(() => {
   setInterval(() => {
     console.log("taking a ss")
     doScreenshot()
-  }, 5000)
+  }, 7000)
 
   const startStream = async (constraints) => {
     const stream = await navigator.mediaDevices.getUserMedia(constraints);

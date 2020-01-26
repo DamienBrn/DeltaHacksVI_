@@ -11,3 +11,16 @@
     cursor: pointer;
     background-color: #ebebeb;
 }
+
+
+.empty_error_message{
+
+color: rgb(180, 1, 1);
+font-weight: lighter;
+}
+
+.missing_object_name{
+
+    font-style: italic;
+    font-weight: 700;
+}

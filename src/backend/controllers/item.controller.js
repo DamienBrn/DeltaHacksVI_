@@ -98,14 +98,11 @@ itemsRoutes.route('/imagesearch').post(function (req, res) {
   let modelId = 'IOD4739137008272670720'
 
   const { PredictionServiceClient } = require('@google-cloud/automl').v1;
-  // const fs = require('fs');
 
   // Instantiates a client
   const client = new PredictionServiceClient();
 
-  // let content = fs.readFileSync('/Users/kevintabatabaei/Documents/DeltaHacksVI_/src/backend/testimage.jpg');
-
-  let fullString = partA + partB + req.body.binaryImage;
+  let fullString = partA + req.body.binaryImage;
 
   const lz = require('lz-string')
   let str = lz.decompress(fullString);
