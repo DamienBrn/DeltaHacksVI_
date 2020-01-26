@@ -1,3 +1,18 @@
+Detla Hacks VI
+
+
+Delta Storage - Inventory Management Powered by AI
+
+**Team Members:**
+Damien BERNO
+Kevin TABATABAEI
+David FELDT
+
+
+Winter 2020
+
+-------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
