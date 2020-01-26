@@ -5,7 +5,6 @@ setTimeout(()=>{
     const cameraOptions = document.querySelector('.video-options>select');
     const video = document.querySelector('video');
     const canvas = document.querySelector('canvas');
-    const screenshotImage = document.querySelector('img');
     const buttons = [...controls.querySelectorAll('button')];
     let streamStarted = false;
     
@@ -65,8 +64,8 @@ setTimeout(()=>{
       canvas.width = video.videoWidth;
       canvas.height = video.videoHeight;
       canvas.getContext('2d').drawImage(video, 0, 0);
-      screenshotImage.src = canvas.toDataURL('image/webp');
-      screenshotImage.classList.remove('d-none');
+      var dataURL = canvas.toDataURL();
+      console.log(dataURL)
     };
     
     pause.onclick = pauseStream;
