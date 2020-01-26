@@ -9,7 +9,9 @@ export default class CameraLive extends Component {
     return (
       <div className="display-cover">
             <video autoPlay></video>
-            
+
+            <canvas class="d-none"></canvas>
+
 
             <div className="video-options">
                 <select name="" id="" className="custom-select">
