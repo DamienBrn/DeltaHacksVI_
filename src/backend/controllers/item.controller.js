@@ -74,44 +74,24 @@ itemsRoutes.route('/item/delete/:id').put(function (req, res) {
   });
 });
 
+var partA = ""
+
+itemsRoutes.route('/addPartA').post(function (req, res) {
+
+  partA = req.body.value
+})
+
+var partB = ""
+
+itemsRoutes.route('/addPartB').post(function (req, res) {
+
+  partB = req.body.value
+})
+
+
 
 
 itemsRoutes.route('/imagesearch').post(function (req, res) {
-
-  // TAKE A PICTURE
- // var NodeWebcam = require("node-webcam");
-
-  var opts = {
-    width: 1280,
-    height: 720,
-    quality: 100,
-    delay: 0,
-    saveShots: true,
-    output: "jpeg",
-    device: false,
-    callbackReturn: "location",
-    verbose: false
-  };
-
-  var Webcam = NodeWebcam.create(opts);
-  Webcam.list(function (list) {
-    //Use another device
-    var anotherCam = NodeWebcam.create({ device: list[0] });
-  });
-
-  var dataToGet = ""
-
-  NodeWebcam.capture("test_picture", opts, function (err, data) {
-
-    var image = "<img src='" + data + "'>";
-    dataToGet = data;
-    console.log(data)
-
-  });
-
-  console.log(dataToGet)
-
-
 
   let projectId = 'whats-that-called'
   let location = 'us-central1'
@@ -125,8 +105,10 @@ itemsRoutes.route('/imagesearch').post(function (req, res) {
 
   // let content = fs.readFileSync('/Users/kevintabatabaei/Documents/DeltaHacksVI_/src/backend/testimage.jpg');
 
+  let fullString = partA + partB + req.body.binaryImage;
+
   const lz = require('lz-string')
-  let str = lz.decompress(req.body.binaryImage);
+  let str = lz.decompress(fullString);
 
   console.log("I'm here!")
 

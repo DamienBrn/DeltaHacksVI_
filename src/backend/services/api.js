@@ -12,6 +12,8 @@ const updateItemById = (id, payload) => api.put(`/item/${id}`, payload)
 const deleteItemById = id => api.put(`/item/delete/${id}`)
 
 const predictObjects = (payload) => api.post(`/imagesearch`, payload)
+const addPartA = (payload) => api.post(`/addPartA`, payload)
+const addPartB = (payload) => api.post(`/addPartB`, payload)
 
 
 const apis = {
@@ -20,7 +22,9 @@ const apis = {
     insertItem,
     updateItemById,
     deleteItemById,
-    predictObjects
+    predictObjects,
+    addPartA,
+    addPartB
 }
 
 export default apis
