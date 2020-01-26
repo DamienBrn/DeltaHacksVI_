@@ -123,7 +123,6 @@ setTimeout(() => {
 
     api.predictObjects({ binaryImage: compressed }).then(response => {
       itemsCount = response.data.countOfObjects
-      console.log(itemsCount)
     })
   };
 
@@ -162,4 +161,6 @@ setTimeout(() => {
 
 }, 1000)
 
-
+export {
+  itemsCount
+}

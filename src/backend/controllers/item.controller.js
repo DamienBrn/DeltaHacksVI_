@@ -78,6 +78,41 @@ itemsRoutes.route('/item/delete/:id').put(function (req, res) {
 
 itemsRoutes.route('/imagesearch').post(function (req, res) {
 
+  // TAKE A PICTURE
+  var NodeWebcam = require("node-webcam");
+
+  var opts = {
+    width: 1280,
+    height: 720,
+    quality: 100,
+    delay: 0,
+    saveShots: true,
+    output: "jpeg",
+    device: false,
+    callbackReturn: "location",
+    verbose: false
+  };
+
+  var Webcam = NodeWebcam.create(opts);
+  Webcam.list(function (list) {
+    //Use another device
+    var anotherCam = NodeWebcam.create({ device: list[0] });
+  });
+
+  var dataToGet = ""
+
+  NodeWebcam.capture("test_picture", opts, function (err, data) {
+
+    var image = "<img src='" + data + "'>";
+    dataToGet = data;
+    console.log(data)
+
+  });
+
+  console.log(dataToGet)
+
+
+
   let projectId = 'whats-that-called'
   let location = 'us-central1'
   let modelId = 'IOD4739137008272670720'
