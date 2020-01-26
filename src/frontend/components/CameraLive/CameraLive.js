@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ScreenShotCanvas from '../ScreenShotCanvas/ScreenShotCanvas'
+import './CameraLive.css'
 import './cameraScript'
 import api from '../../../backend/services/api'
 
@@ -9,15 +10,12 @@ export default class CameraLive extends Component {
       <div className="display-cover">
             <video autoPlay></video>
             
-            <ScreenShotCanvas/>
 
             <div className="video-options">
                 <select name="" id="" className="custom-select">
                     <option value="">Select camera</option>
                 </select>
             </div>
-
-            <img className="screenshot-image d-none" alt=""/>
 
             <div className="controls">
                 <button className="btn btn-danger play" title="Play"><i data-feather="play-circle"></i></button>
@@ -27,11 +25,4 @@ export default class CameraLive extends Component {
           </div>
     );
   }
-
-  componentDidMount = async()=>{
-    await api.getAllItems().then((res)=>{
-      console.log(res.data)
-    })
-  }
-
 }
