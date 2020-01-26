@@ -3,7 +3,6 @@ import ScreenShotCanvas from '../ScreenShotCanvas/ScreenShotCanvas'
 import './CameraLive.css'
 import './cameraScript'
 import api from '../../../backend/services/api'
-import { test } from './cameraScript';
 
 export default class CameraLive extends Component {
   render() {
@@ -30,6 +29,6 @@ export default class CameraLive extends Component {
   }
 
   componentDidMount(){
-    console.log(test)
+   
   }
 }
