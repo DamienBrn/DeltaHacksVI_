@@ -1,3 +1,5 @@
+const api = require("../../../backend/services/api")
+
 setTimeout(()=>{
 
 
@@ -61,15 +63,19 @@ setTimeout(()=>{
     };
     
     const doScreenshot = () => {
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
+      canvas.width = 500;
+      canvas.height = 400;
       canvas.getContext('2d').drawImage(video, 0, 0);
       var dataURL = canvas.toDataURL();
-      console.log(dataURL)
+      console.log('screenshot taken')
+      api.predictObjects('test')
     };
     
     pause.onclick = pauseStream;
-    screenshot.onclick = doScreenshot;
+
+    setInterval(()=>{
+      doScreenshot()
+    }, 5000)
     
     const startStream = async (constraints) => {
       const stream = await navigator.mediaDevices.getUserMedia(constraints);

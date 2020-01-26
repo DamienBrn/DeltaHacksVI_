@@ -13,14 +13,14 @@ const client = new PredictionServiceClient();
 const content = fs.readFileSync(filePath);
 
 
-async function predict(image_bytes) {
+export async function predict(image_bytes) {
 
     const request = {
 
         name: client.modelPath(projectId, location, modelId),
         payload: {
             image: {
-                imageBytes: content,
+                imageBytes: image_bytes,
             },
         },
         params: {
