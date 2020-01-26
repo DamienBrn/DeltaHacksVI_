@@ -91,3 +91,12 @@
   .controls > button:hover svg {
     color: white;
   }
+
+
+  i{
+    color: white;
+  }
+
+  .controls button:hover{
+    cursor: pointer;
+  }
